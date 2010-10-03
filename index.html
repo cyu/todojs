@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang=en>
+<head>
+    <title>TODO</title>
+    <meta charset=utf-8>
+    <link rel=stylesheet href=http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/themes/smoothness/jquery-ui.css type=text/css media=screen charset=utf-8>
+    <style>
+        * { margin:0;padding:0; }
+        html { background-color: #efefef; color: #222; font-family: Helvetica, "Helvetica Neue", Arial, sans-serif; }
+        div#content { margin: 0 auto; padding-top: 100px; width: 600px; }
+        p { font-size: 1.5em; margin-top: 2em; margin-bottom: 1.5em; }
+        #login { margin-bottom: 1em; }
+        #task-list { margin: 1em 1em; }
+        #task-list li { margin-bottom: .2em; }
+        .inputs input { font-size: 1em; margin-top: .5em; }
+        .inputs input[type=text] { font-family: Helvetica, "Helvetica Neue", Arial, sans-serif; }
+        .ui-dialog-titlebar { display:none; }
+        .completed { text-decoration: line-through; }
+    </style>
+</head>
+<body>
+    <div id="content">
+    <h1>TODO</h1>
+    <ul id=task-list></ul>
+    <div id=new-task-pane class=inputs style=display:none>
+        <input id=new-task value="New Task">
+        <input id=new-task-button type=button value="Add Task">
+    </div>
+
+    <div id=login class=inputs style=display:none>
+        <label for=email>Email Address</label>
+        <input id=email name=email value="">
+        <input id=login-button type=button value=Login>
+    </div>
+    <script src=http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js></script>
+    <script src=http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js></script>
+    <script src=http://store.sourcebender.com/app_storage.js></script>
+    <script src=todo.js></script>
+</body>
+</html>
