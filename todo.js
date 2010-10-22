@@ -22,13 +22,19 @@ $(document).ready(function(){
         $(clicked).delay(1000).slideUp('slow');
     });
 
+    window.appStorage.$.ready(function(){
+        var tasks = window.appStorage.tasks || [];
+        for (var i=0; i<tasks.length; i++) {
+            $('#task-list').append("<li class='task'>" + tasks[i] + "</li>")
+        }
+    });
+
+    $('#twitter-login').click(function(){
+        window.appStorage.$.connect({twitter:true});
+    });
+
     $('#login-button').click(function(){
-        window.appStorage.connect({email: $('#email').val()}, function(){
-            var tasks = window.appStorage.tasks || [];
-            for (var i=0; i<tasks.length; i++) {
-                $('#task-list').append("<li class='task'>" + tasks[i] + "</li>")
-            }
-        });
+        window.appStorage.$.connect({email: $('#email').val()});
         $('#login').dialog('close');
         $('#new-task-pane').show();
     });
