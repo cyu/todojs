@@ -27,6 +27,7 @@ $(document).ready(function(){
         for (var i=0; i<tasks.length; i++) {
             $('#task-list').append("<li class='task'>" + tasks[i] + "</li>")
         }
+        $('#new-task-pane').hide();
     });
 
     $('#twitter-login').click(function(){
