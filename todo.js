@@ -46,6 +46,7 @@ $(document).ready(function(){
             $('#task-list').append("<li class='task'>" + tasks[i] + "</li>")
         }
         $('#login').dialog('close');
+        $('#new-task-pane').show();
     });
 
 });
