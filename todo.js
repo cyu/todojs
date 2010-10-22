@@ -22,14 +22,6 @@ $(document).ready(function(){
         $(clicked).delay(1000).slideUp('slow');
     });
 
-    window.appStorage.$.ready(function(){
-        var tasks = window.appStorage.tasks || [];
-        for (var i=0; i<tasks.length; i++) {
-            $('#task-list').append("<li class='task'>" + tasks[i] + "</li>")
-        }
-        $('#new-task-pane').hide();
-    });
-
     $('#twitter-login').click(function(){
         window.appStorage.$.connect({twitter:true});
     });
@@ -47,4 +39,13 @@ $(document).ready(function(){
         height: 'auto',
         minHeight: 80,
         position: [titlePos.left, titlePos.top + title.height()] });
+
+    window.appStorage.$.ready(function(){
+        var tasks = window.appStorage.tasks || [];
+        for (var i=0; i<tasks.length; i++) {
+            $('#task-list').append("<li class='task'>" + tasks[i] + "</li>")
+        }
+        $('#login').dialog('close');
+    });
+
 });
