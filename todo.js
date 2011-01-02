@@ -4,7 +4,9 @@ $(document).ready(function(){
         if (!divs.first().is(':hidden')) {
             $(divs.first()).hide();
             $(divs.get(1)).show().find('#new-task').focus();
+            return true;
         }
+        return false;
     };
 
     var hideNewTaskForm = function() {
@@ -12,7 +14,9 @@ $(document).ready(function(){
         if (divs.first().is(':hidden')) {
             $(divs.get(1)).hide();
             $(divs.first()).show();
+            return true;
         }
+        return false;
     };
 
     $('#add').click(showNewTaskForm);
@@ -89,7 +93,11 @@ $(document).ready(function(){
 
         $('#login').hide();
         $('#task-list').show();
-        $(document).keypress(showNewTaskForm);
+        $(document).keypress(function(event){
+            if (showNewTaskForm()) {
+                $('#new-task').val(event.charCode);
+            }
+        });
     });
 
 });
