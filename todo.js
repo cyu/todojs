@@ -73,7 +73,7 @@ $(document).ready(function(){
             // migrate old schema
             var updated = false;
             for (var i=0; i<tasks.length; i++) {
-                if (!('text' in tasks[i])) {
+                if (typeof(tasks[i]) == 'string') {
                     tasks[i] = {text: tasks[i]};
                     updated = true;
                 }
