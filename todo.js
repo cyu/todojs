@@ -68,6 +68,19 @@ $(document).ready(function(){
                 {text: 'Click on a task to mark it completed'}
             ];
             window.appStorage.setItem('tasks', tasks);
+
+        } else {
+            // migrate old schema
+            var updated = false;
+            for (var i=0; i<tasks.length; i++) {
+                if (!('text' in task[i])) {
+                    task[i] = {text: task[i]};
+                    updated = true;
+                }
+            }
+            if (updated) {
+                window.appStorage.setItem('tasks', tasks);
+            }
         }
 
         for (var i=0; i<tasks.length; i++) {
