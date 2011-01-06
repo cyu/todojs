@@ -94,8 +94,9 @@ $(document).ready(function(){
         $('#login').hide();
         $('#task-list').show();
         $(document).keypress(function(event){
-            if (showNewTaskForm()) {
-                $('#new-task').val(event.charCode);
+            var key = event.keyCode || event.charCode;
+            if (key >= 65 && key <= 122 && showNewTaskForm()) {
+                $('#new-task').val(key);
             }
         });
     });
