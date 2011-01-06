@@ -93,12 +93,12 @@ $(document).ready(function(){
 
         $('#login').hide();
         $('#task-list').show();
-        $(document).keypress(function(event){
+        /*$(document).keypress(function(event){
             var key = event.keyCode || event.charCode;
             if (key >= 65 && key <= 122 && showNewTaskForm()) {
                 $('#new-task').val(key);
             }
-        });
+        });*/
     });
 
 });
