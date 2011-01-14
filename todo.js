@@ -19,7 +19,7 @@ $(document).ready(function(){
         return false;
     };
 
-    $('#add').click(showNewTaskForm);
+    $('#add div').first().click(showNewTaskForm);
 
     $('#add form').submit(function(){
         var newTask = $('#new-task').val();
@@ -27,7 +27,7 @@ $(document).ready(function(){
         var tasks = window.appStorage.tasks;
         tasks.push({text:newTask});
         window.appStorage.setItem('tasks', tasks);
-        $('#task-list ol li#add').before("<li class=task>" + newTask + "</li>")
+        $('#task-list ol li#add').before("<li class=task>" + newTask + "</li>");
         return false;
     });
 
