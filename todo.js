@@ -52,7 +52,7 @@ $(document).ready(function(){
     });
 
     $('#twitter-login a').click(function(){
-        window.appStorage.$.connect({twitter:true});
+        window.appStorage.$.connect({twitter:true}, true);
     });
 
     $('#login form').submit(function(){
