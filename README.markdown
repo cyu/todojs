@@ -1,4 +1,6 @@
-A TODO list web application that backed by Stor.IO.  Stor.IO provides an appStorage object that mirrors the localStorage API.  Items set on appStorage are stored transparently to Stor.IO.
+todo.js
+=======
+This is a todo application that backed by Stor.IO.  Stor.IO JavaScript library that provides an appStorage object that mirrors the localStorage API.  Items set on appStorage are stored transparently to Stor.IO.
 
 You can [read more about Stor.IO here](http://blog.sourcebender.com/easy-storage-for-html5-applications.html).
 
